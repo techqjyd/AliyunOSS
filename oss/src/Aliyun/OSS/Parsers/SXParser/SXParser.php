@@ -21,7 +21,7 @@ abstract class SXParser implements ResponseParserInterface  {
             $xmlObject = new \SimpleXMLElement($content);
             return $xmlObject;
         } catch (\Exception $e) {
-            throw new ClientException('Parse error', $e);
+            throw new ClientException('Parse error, content: ' . $content, $e);
         }
     }
 }
